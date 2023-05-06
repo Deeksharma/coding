@@ -51,74 +51,85 @@ int power(int a, int b) {
 	else return power((a * a) % mod, b / 2) % mod;
 }
 
-/*
-TC - O(log(n))
+// TLE
+// vector<vector<int> > dp(2023);
+// vector<vector<int> > vis(2023);
+// map<int,pair<int,int> > m;
+// void prep(){
+// 	int k=1;
+// 	for(int i=0;i<2023;i++){
+// 		for(int j=0;j<=i;j++){
+// 			pair<int,int> p;
+// 			p.ff = i;
+// 			p.ss = j;
+// 			m[k] = p;
+// 			dp[i].pb(k++);
+// 			vis[i].pb(0);
+// 		}
+// 	}
+// }
+// void reset(){
+// 	for(int i=0;i<2023;i++){
+// 		for(int j=0;j<=i;j++){
+// 			vis[i][j]=0;
+// 		}
+// 	}
+// }
 
-can be applied on any arithmentic operation with associative property - x.(y.z) = (x.y).z - add, multiplication, modulo of add and multiplication
+// int dfs(int x, int y){
+// 	if(x<0||y<0) return 0LL;
+// 	if(y>=dp[x].size()) return 0LL;
+// 	if(vis[x][y]==1) return 0LL;
+// 	vis[x][y]=1;
 
-the number n has exactly ceil(log2(n)) + 1 digits in base 2 complexity is log2(n)
+// 	int ans= dp[x][y]*dp[x][y] + dfs(x-1,y) + dfs(x-1, y-1);
+// 	return ans;
+// }
 
-*/
+// void solve1() {
+// 	reset();
+// 	int n;
+// 	cin>>n;
+// 	pair<int,int> p = m[n];
+// 	int x = p.ff;
+// 	int y =p.ss;
+// 	cout<<dfs(x,y)<<endl;
+// }
 
-//-------------------------------------------------------------------------------------------------------------
+int arr[2023][2023];
+int dp[2023][2023];
+map<int,pair<int,int> > m;
 
-// compute a^b
-int bin_pow(int a, int b){
-	if(b==0) return 1;
-
-	int res = bin_pow(a, b/2);
-	if(b%2){
-		return res * res * a;
-	}
-	else{
-		return res*res;
-	}
-}
-
-int bin_pow2(int a, int b){
-	if(b==0) return 1;
-	if(b%2) return a*bin_pow2(a*a, b/2);
-	else return bin_pow2(a*a, b/2);
-}
-
-
-// without recursion
-int bin_pow3(int a, int b){
-	int res = 1;
-	while(b>0){
-		if(b&1){
-			res = res*a;
+void prep(){
+	int k=1;
+	for(int i=0;i<2023;i++){
+		for(int j=0;j<=i;j++){
+			m[k]= make_pair(i-j,j);
+			arr[i-j][j]=k++;
 		}
-		a = a*a;
-		b >>= 1;
 	}
-	return res;
-}
 
-
-// without recursion
-int bin_pow_mod(int a, int b, int m){
-	a %= m;
-	int res = 1;
-	while(b>0){
-		if(b&1){
-			res = res*a % m;
+	dp[0][0] = 1;
+	for(int i=1;i<2023;i++){
+		dp[0][i]= arr[0][i]*arr[0][i] + dp[0][i-1];
+	}
+	for(int i=1;i<2023;i++){
+		dp[i][0]= arr[i][0]*arr[i][0] + dp[i-1][0];
+	}
+	for(int i=1;i<2023;i++){
+		for(int j=1;j<2023;j++){
+			dp[i][j] = arr[i][j]*arr[i][j] - dp[i-1][j-1] + dp[i-1][j] + dp[i][j-1];
 		}
-		a = a*a % m;
-		b >>= 1;
 	}
-	return res;
 }
-
-
-//-------------------------------------------------------------------------------------------------------------
-
 
 void solve() {
-	cout<< bin_pow(5,5)<<endl;
-	cout<< bin_pow2(5,5)<<endl;
-	cout<< bin_pow3(5,5)<<endl;
-
+	int n;
+	cin>>n;
+	pair<int,int> p = m[n];
+	int x = p.ff;
+	int y =p.ss;
+	cout<<dp[x][y]<<endl;
 }
 
 int32_t main() {
@@ -132,7 +143,8 @@ int32_t main() {
 
 
 	int t = 1;
-	//cin >> t;
+	cin >> t;
+	prep();
 	double time1 = (double)clock() / CLOCKS_PER_SEC;
 	while (t--) solve();
 

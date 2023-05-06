@@ -51,74 +51,53 @@ int power(int a, int b) {
 	else return power((a * a) % mod, b / 2) % mod;
 }
 
-/*
-TC - O(log(n))
-
-can be applied on any arithmentic operation with associative property - x.(y.z) = (x.y).z - add, multiplication, modulo of add and multiplication
-
-the number n has exactly ceil(log2(n)) + 1 digits in base 2 complexity is log2(n)
-
-*/
-
-//-------------------------------------------------------------------------------------------------------------
-
-// compute a^b
-int bin_pow(int a, int b){
-	if(b==0) return 1;
-
-	int res = bin_pow(a, b/2);
-	if(b%2){
-		return res * res * a;
-	}
-	else{
-		return res*res;
-	}
-}
-
-int bin_pow2(int a, int b){
-	if(b==0) return 1;
-	if(b%2) return a*bin_pow2(a*a, b/2);
-	else return bin_pow2(a*a, b/2);
-}
-
-
-// without recursion
-int bin_pow3(int a, int b){
-	int res = 1;
-	while(b>0){
-		if(b&1){
-			res = res*a;
-		}
-		a = a*a;
-		b >>= 1;
-	}
-	return res;
-}
-
-
-// without recursion
-int bin_pow_mod(int a, int b, int m){
-	a %= m;
-	int res = 1;
-	while(b>0){
-		if(b&1){
-			res = res*a % m;
-		}
-		a = a*a % m;
-		b >>= 1;
-	}
-	return res;
-}
-
-
-//-------------------------------------------------------------------------------------------------------------
-
-
 void solve() {
-	cout<< bin_pow(5,5)<<endl;
-	cout<< bin_pow2(5,5)<<endl;
-	cout<< bin_pow3(5,5)<<endl;
+	int n,m;
+	cin>>n>>m;
+	int arr[n][m];
+	for(int i=0;i<n;i++){
+		for(int j=0;j<m;j++){
+			cin>>arr[i][j];
+		}
+	}
+	int vis[n][m];
+	memset(vis, 0, n*m*sizeof(int));
 
+	int ans_max = 0;
+	for(int i=0;i<n;i++){
+		for(int j=0;j<m;j++){
+			int ans =0;
+			if(vis[i][j]==0&&arr[i][j]>0){
+				queue<pair<int,int> > q;
+				pair<int,int> temp1;
+				temp1.ff = i;
+				temp1.ss = j;
+				q.push(temp1);
+				vis[i][j]=1;
+				ans +=arr[i][j];
+				while(!q.empty()){
+					pair<int,int> p = q.front();
+					int x= p.ff;
+					int y = p.ss;
+					q.pop();
+					for(int k=0;k<4;k++){
+						int xx = x+dir4[k][0];
+						int yy = y+dir4[k][1];
+						if(xx>=0&&xx<n&&yy>=0&&yy<m&&vis[xx][yy]!=1&&arr[xx][yy]>0){
+							vis[xx][yy]=1;
+							ans +=arr[xx][yy];
+							pair<int,int> temp2;
+							temp2.ff = xx;
+							temp2.ss = yy;
+							q.push(temp2);
+						}
+					}
+				}
+				ans_max= max(ans,ans_max);
+			}
+		}
+	}
+	cout<<ans_max<<endl;
 }
 
 int32_t main() {
@@ -132,7 +111,7 @@ int32_t main() {
 
 
 	int t = 1;
-	//cin >> t;
+	cin >> t;
 	double time1 = (double)clock() / CLOCKS_PER_SEC;
 	while (t--) solve();
 

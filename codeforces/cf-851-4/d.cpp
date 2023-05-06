@@ -51,74 +51,95 @@ int power(int a, int b) {
 	else return power((a * a) % mod, b / 2) % mod;
 }
 
-/*
-TC - O(log(n))
-
-can be applied on any arithmentic operation with associative property - x.(y.z) = (x.y).z - add, multiplication, modulo of add and multiplication
-
-the number n has exactly ceil(log2(n)) + 1 digits in base 2 complexity is log2(n)
-
-*/
-
-//-------------------------------------------------------------------------------------------------------------
-
-// compute a^b
-int bin_pow(int a, int b){
-	if(b==0) return 1;
-
-	int res = bin_pow(a, b/2);
-	if(b%2){
-		return res * res * a;
+// dunno what went wrong :-(((
+void solve1() {
+	int n,m;
+	cin>>n>>m;
+	if(m>n){
+		cout<<"NO"<<endl;
+		return;
 	}
-	else{
-		return res*res;
+	if(m==n){
+		cout<<"YES"<<endl;
+		return;
 	}
-}
-
-int bin_pow2(int a, int b){
-	if(b==0) return 1;
-	if(b%2) return a*bin_pow2(a*a, b/2);
-	else return bin_pow2(a*a, b/2);
-}
-
-
-// without recursion
-int bin_pow3(int a, int b){
-	int res = 1;
-	while(b>0){
-		if(b&1){
-			res = res*a;
+	map<int,int> n1,m1;
+	int temp_n=n;
+	int temp_m=m;
+	// cout<<n<<" "<<m<<":"<<endl;
+	for(int i=2;i*i<=temp_n;i++){
+		if(n%i==0){
+			while(n%i==0){
+				n1[i]++;
+				n=n/i;
+			}
 		}
-		a = a*a;
-		b >>= 1;
 	}
-	return res;
-}
+	if(n!=1){
+		n1[n]++;
+		n=n/n;
+	}
 
-
-// without recursion
-int bin_pow_mod(int a, int b, int m){
-	a %= m;
-	int res = 1;
-	while(b>0){
-		if(b&1){
-			res = res*a % m;
+	for(int i=2;i*i<=temp_m;i++){
+		if(m%i==0){
+			while(m%i==0){
+				m1[i]++;
+				m=m/i;
+			}
 		}
-		a = a*a % m;
-		b >>= 1;
 	}
-	return res;
+	if(m!=1){
+		m1[m]++;
+		m=m/m;
+	}
+	
+	// for(auto x: n1){
+	// 	cout<<x.ff<<" "<<x.ss<<endl;
+	// }
+	// cout<<endl;
+	// for(auto x: m1){
+	// 	cout<<x.ff<<" "<<x.ss<<endl;
+	// }
+	// cout<<"--------------"<<endl;
+
+	for(auto x: m1){
+		int f= x.ff;
+		int s=x.ss;
+		if(n1.find(f)!=n1.end()){
+			n1[f]=max(n1[f]-m1[f],0LL);
+			m1[f]=max(m1[f]-n1[f],0LL);
+		}
+	}
+
+
+	for(auto x: m1){
+		if(x.ff!=2&&x.ss>0){
+			cout<<"NO"<<endl;
+			return;
+		}
+	}
+	for(auto x: n1){
+		if(x.ff!=3&&x.ss>0){
+			cout<<"NO"<<endl;
+			return;
+		}
+	}
+
+	cout<<"YES"<<endl;
 }
 
-
-//-------------------------------------------------------------------------------------------------------------
-
+bool dfs(int n,int m){
+	if(n==m) return true;
+	if(m>n || n%3) return false;
+	return dfs(n/3,m)||dfs(2*n/3,m); 
+}
 
 void solve() {
-	cout<< bin_pow(5,5)<<endl;
-	cout<< bin_pow2(5,5)<<endl;
-	cout<< bin_pow3(5,5)<<endl;
-
+	int n,m;
+	cin>>n>>m;
+	if(dfs(n,m)) cout<<"YES";
+	else cout<<"NO";
+	cout<<endl;	
 }
 
 int32_t main() {
@@ -132,7 +153,7 @@ int32_t main() {
 
 
 	int t = 1;
-	//cin >> t;
+	cin >> t;
 	double time1 = (double)clock() / CLOCKS_PER_SEC;
 	while (t--) solve();
 

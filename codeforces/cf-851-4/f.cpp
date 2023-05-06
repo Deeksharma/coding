@@ -51,73 +51,43 @@ int power(int a, int b) {
 	else return power((a * a) % mod, b / 2) % mod;
 }
 
-/*
-TC - O(log(n))
-
-can be applied on any arithmentic operation with associative property - x.(y.z) = (x.y).z - add, multiplication, modulo of add and multiplication
-
-the number n has exactly ceil(log2(n)) + 1 digits in base 2 complexity is log2(n)
-
-*/
-
-//-------------------------------------------------------------------------------------------------------------
-
-// compute a^b
-int bin_pow(int a, int b){
-	if(b==0) return 1;
-
-	int res = bin_pow(a, b/2);
-	if(b%2){
-		return res * res * a;
-	}
-	else{
-		return res*res;
-	}
-}
-
-int bin_pow2(int a, int b){
-	if(b==0) return 1;
-	if(b%2) return a*bin_pow2(a*a, b/2);
-	else return bin_pow2(a*a, b/2);
-}
-
-
-// without recursion
-int bin_pow3(int a, int b){
-	int res = 1;
-	while(b>0){
-		if(b&1){
-			res = res*a;
-		}
-		a = a*a;
-		b >>= 1;
-	}
-	return res;
-}
-
-
-// without recursion
-int bin_pow_mod(int a, int b, int m){
-	a %= m;
-	int res = 1;
-	while(b>0){
-		if(b&1){
-			res = res*a % m;
-		}
-		a = a*a % m;
-		b >>= 1;
-	}
-	return res;
-}
-
-
-//-------------------------------------------------------------------------------------------------------------
-
-
 void solve() {
-	cout<< bin_pow(5,5)<<endl;
-	cout<< bin_pow2(5,5)<<endl;
-	cout<< bin_pow3(5,5)<<endl;
+	int n,m;
+	cin>>n>>m;
+	// n;m--;
+	vector<vector<int> > adj(n+1);
+	for(int i=0;i<m;i++){
+		int u,v;
+		// u--;v--;
+		cin>>u>>v;
+		adj[u].pb(v);
+		adj[v].pb(u);
+	}
+	map<int,vector<int> > ma;
+	for(int i=1;i<=n;i++){
+		ma[adj[i].size()].push_back(i);
+	}
+	
+	if(ma.size()==2){
+		int xx =0;
+		for(auto x: ma){
+			if(x.ff != 1){
+				xx = x.ss.size()-1;
+			}	
+		}
+		int yy = (m-xx)/xx;
+		cout<<xx<<" "<<yy<<endl;
+	}else{
+		int xx = 0;
+		for(auto x: ma){
+			if(x.ss.size() == 1){
+				xx = x.ss[0];
+			}	
+		}
+		xx = adj[xx].size();
+		int yy = (m-xx)/xx;
+		cout<<xx<<" "<<yy<<endl;
+	}
 
 }
 
@@ -132,7 +102,7 @@ int32_t main() {
 
 
 	int t = 1;
-	//cin >> t;
+	cin >> t;
 	double time1 = (double)clock() / CLOCKS_PER_SEC;
 	while (t--) solve();
 

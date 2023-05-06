@@ -51,73 +51,30 @@ int power(int a, int b) {
 	else return power((a * a) % mod, b / 2) % mod;
 }
 
-/*
-TC - O(log(n))
-
-can be applied on any arithmentic operation with associative property - x.(y.z) = (x.y).z - add, multiplication, modulo of add and multiplication
-
-the number n has exactly ceil(log2(n)) + 1 digits in base 2 complexity is log2(n)
-
-*/
-
-//-------------------------------------------------------------------------------------------------------------
-
-// compute a^b
-int bin_pow(int a, int b){
-	if(b==0) return 1;
-
-	int res = bin_pow(a, b/2);
-	if(b%2){
-		return res * res * a;
-	}
-	else{
-		return res*res;
-	}
-}
-
-int bin_pow2(int a, int b){
-	if(b==0) return 1;
-	if(b%2) return a*bin_pow2(a*a, b/2);
-	else return bin_pow2(a*a, b/2);
-}
-
-
-// without recursion
-int bin_pow3(int a, int b){
-	int res = 1;
-	while(b>0){
-		if(b&1){
-			res = res*a;
-		}
-		a = a*a;
-		b >>= 1;
-	}
-	return res;
-}
-
-
-// without recursion
-int bin_pow_mod(int a, int b, int m){
-	a %= m;
-	int res = 1;
-	while(b>0){
-		if(b&1){
-			res = res*a % m;
-		}
-		a = a*a % m;
-		b >>= 1;
-	}
-	return res;
-}
-
-
-//-------------------------------------------------------------------------------------------------------------
-
-
 void solve() {
-	cout<< bin_pow(5,5)<<endl;
-	cout<< bin_pow2(5,5)<<endl;
-	cout<< bin_pow3(5,5)<<endl;
+	int n;
+	cin>>n;
+	int min_01=INT_MAX;
+	int min_10=INT_MAX;
+	int min_11=INT_MAX;
+
+	for(int i=0;i<n;i++){
+		int m;
+		string s;
+		cin>>m>>s;
+		if(s=="01"){
+			min_01 = min(min_01,m);
+		}
+		if(s=="10"){
+			min_10 = min(min_10,m);
+		}
+		if(s=="11"){
+			min_11 = min(min_11,m);
+		}
+	}
+	int ans = min(min_11, min_01+min_10);
+	if(ans>=INT_MAX) cout<<-1<<endl;
+	else cout<<ans<<endl;
 
 }
 
@@ -132,7 +89,7 @@ int32_t main() {
 
 
 	int t = 1;
-	//cin >> t;
+	cin >> t;
 	double time1 = (double)clock() / CLOCKS_PER_SEC;
 	while (t--) solve();
 
