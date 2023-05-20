@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"temp",
+				"temp2"
+			],
+			[
+				"min_1",
+				"min_10"
+			],
+			[
+				"min",
+				"min_01"
+			],
+			[
 				"bin",
 				"bin_pow"
 			],
@@ -23,7 +35,7 @@
 			"file": "algorithms/algebra/binary_exponentiation/binary_exponentiation.cpp",
 			"settings":
 			{
-				"buffer_size": 2936,
+				"buffer_size": 3114,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			},
@@ -3916,34 +3928,214 @@
 					null,
 					"AgAAAJQIAAAAAAAAlAgAAAAAAAAdAAAALy8gNSw1IC0+IDUqKDI1LDIpIC0+IDUqNjI1KjGTCAAAAAAAAJMIAAAAAAAAAQAAAAo",
 					"AQAAAAAAAAABAAAAsQgAAAAAAACUCAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					714,
+					1,
+					"insert",
+					{
+						"characters": " "
+					},
+					"AQAAANAIAAAAAAAA0QgAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA0AgAAAAAAADQCAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					730,
+					1,
+					"insert",
+					{
+						"characters": "\n\n\n"
+					},
+					"AwAAACcJAAAAAAAAKAkAAAAAAAAAAAAAKAkAAAAAAAApCQAAAAAAAAAAAAApCQAAAAAAACoJAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAJwkAAAAAAAAnCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					731,
+					1,
+					"paste",
+					null,
+					"AQAAACoJAAAAAAAAvQkAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAKgkAAAAAAAAqCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					741,
+					1,
+					"left_delete",
+					null,
+					"AQAAAEoJAAAAAAAASgkAAAAAAAABAAAAMw",
+					"AQAAAAAAAAABAAAASwkAAAAAAABLCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					742,
+					1,
+					"insert",
+					{
+						"characters": "_mod"
+					},
+					"BAAAAEoJAAAAAAAASwkAAAAAAAAAAAAASwkAAAAAAABMCQAAAAAAAAAAAABMCQAAAAAAAE0JAAAAAAAAAAAAAE0JAAAAAAAATgkAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAASgkAAAAAAABKCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					747,
+					1,
+					"insert",
+					{
+						"characters": "\na"
+					},
+					"AwAAAF0JAAAAAAAAXgkAAAAAAAAAAAAAXgkAAAAAAABfCQAAAAAAAAAAAABfCQAAAAAAAGAJAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAXQkAAAAAAABdCQAAAAAAAP///////+9/"
+				],
+				[
+					748,
+					1,
+					"insert",
+					{
+						"characters": " "
+					},
+					"AQAAAGAJAAAAAAAAYQkAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAYAkAAAAAAABgCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					749,
+					1,
+					"insert",
+					{
+						"characters": "%="
+					},
+					"AgAAAGEJAAAAAAAAYgkAAAAAAAAAAAAAYgkAAAAAAABjCQAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAYQkAAAAAAABhCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					750,
+					1,
+					"insert",
+					{
+						"characters": " "
+					},
+					"AQAAAGMJAAAAAAAAZAkAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAYwkAAAAAAABjCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					751,
+					1,
+					"insert",
+					{
+						"characters": "m;"
+					},
+					"AgAAAGQJAAAAAAAAZQkAAAAAAAAAAAAAZQkAAAAAAABmCQAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAZAkAAAAAAABkCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					754,
+					1,
+					"insert",
+					{
+						"characters": "int"
+					},
+					"AwAAAFsJAAAAAAAAXAkAAAAAAAAAAAAAXAkAAAAAAABdCQAAAAAAAAAAAABdCQAAAAAAAF4JAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAWwkAAAAAAABbCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					755,
+					1,
+					"insert",
+					{
+						"characters": " m"
+					},
+					"AgAAAF4JAAAAAAAAXwkAAAAAAAAAAAAAXwkAAAAAAABgCQAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAXgkAAAAAAABeCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					758,
+					1,
+					"insert",
+					{
+						"characters": ","
+					},
+					"AQAAAFsJAAAAAAAAXAkAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAWwkAAAAAAABbCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					759,
+					1,
+					"insert",
+					{
+						"characters": " "
+					},
+					"AQAAAFwJAAAAAAAAXQkAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAXAkAAAAAAABcCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					763,
+					1,
+					"insert",
+					{
+						"characters": "%m"
+					},
+					"AgAAALEJAAAAAAAAsgkAAAAAAAAAAAAAsgkAAAAAAACzCQAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAsQkAAAAAAACxCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					766,
+					1,
+					"insert",
+					{
+						"characters": " "
+					},
+					"AQAAALEJAAAAAAAAsgkAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAsQkAAAAAAACxCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					768,
+					1,
+					"insert",
+					{
+						"characters": " "
+					},
+					"AQAAALMJAAAAAAAAtAkAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAswkAAAAAAACzCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					779,
+					1,
+					"insert",
+					{
+						"characters": " %"
+					},
+					"AgAAAKIJAAAAAAAAowkAAAAAAAAAAAAAowkAAAAAAACkCQAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAogkAAAAAAACiCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					780,
+					1,
+					"insert",
+					{
+						"characters": " m"
+					},
+					"AgAAAKQJAAAAAAAApQkAAAAAAAAAAAAApQkAAAAAAACmCQAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAApAkAAAAAAACkCQAAAAAAAAAAAAAAAPC/"
 				]
 			]
+		},
+		{
+			"file": "algorithms/algebra/binary_exponentiation/input.txt",
+			"settings":
+			{
+				"buffer_size": 0,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
 		},
 		{
 			"file": "algorithms/algebra/binary_exponentiation/output.txt",
 			"settings":
 			{
-				"buffer_size": 30,
+				"buffer_size": 15,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			},
 			"undo_stack":
 			[
-				[
-					1,
-					1,
-					"revert",
-					null,
-					"AgAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAMzEyNQo1CjMxMjUKAAAAAAAAAAAVAAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					22,
-					1,
-					"revert",
-					null,
-					"AgAAAAAAAAAAAAAAAAAAAAAAAAAVAAAAMzEyNQo1IDUKMjUgMgo1CjMxMjUKAAAAAAAAAAAeAAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAFQAAAAAAAAAVAAAAAAAAAAAAAAAAAPC/"
-				]
 			]
 		}
 	],
@@ -3991,6 +4183,14 @@
 		"selected_items":
 		[
 			[
+				"Terminus",
+				"Terminus: Open Default Shell in Panel"
+			],
+			[
+				"Install ",
+				"Package Control: Install Package"
+			],
+			[
 				"Snippet: ",
 				"Snippet: Typedef"
 			]
@@ -4015,9 +4215,26 @@
 	},
 	"expanded_folders":
 	[
+		"/Users/deekshasharma/Documents/coding",
+		"/Users/deekshasharma/Documents/coding/algorithms",
+		"/Users/deekshasharma/Documents/coding/algorithms/algebra",
+		"/Users/deekshasharma/Documents/coding/algorithms/algebra/binary_exponentiation",
+		"/Users/deekshasharma/Documents/coding/codeforces",
+		"/Users/deekshasharma/Documents/coding/codeforces/cf-851-4"
 	],
 	"file_history":
 	[
+		"/Users/deekshasharma/Documents/coding/algorithms/algebra/binary_exponentiation/input.txt",
+		"/Users/deekshasharma/Documents/coding/codeforces/cf-851-4/input.txt",
+		"/Users/deekshasharma/Documents/coding/codeforces/cf-851-4/output.txt",
+		"/Users/deekshasharma/Documents/coding/codeforces/cf-851-4/b.cpp",
+		"/Users/deekshasharma/Documents/coding/codeforces/cf-851-4/a.cpp",
+		"/Users/deekshasharma/Documents/coding/codeforces/cf-851-4/c.cpp",
+		"/Users/deekshasharma/Documents/coding/codeforces/cf-851-4/d.cpp",
+		"/Users/deekshasharma/Documents/coding/codeforces/cf-851-4/e.cpp",
+		"/Users/deekshasharma/Documents/coding/codeforces/cf-851-4/f.cpp",
+		"/Users/deekshasharma/Documents/coding/codeforces/cf-851-4/g.cpp",
+		"/Users/deekshasharma/Documents/coding/algorithms/algebra/binary_exponentiation/output.txt",
 		"/Users/deekshasharma/Library/Application Support/Sublime Text 3/Packages/User/cpp_algo.sublime-snippet",
 		"/Users/deekshasharma/competiitive_programming/cf-792-4/b.cpp",
 		"/Users/deekshasharma/Library/Application Support/Sublime Text 3/Packages/User/cpp.sublime-snippet",
@@ -4029,7 +4246,7 @@
 	],
 	"find":
 	{
-		"height": 24.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
@@ -4043,6 +4260,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"3",
 			");\n"
 		],
 		"highlight": true,
@@ -4072,15 +4290,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2936,
+						"buffer_size": 3114,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2324,
-								2324
+								326,
+								326
 							]
 						],
 						"settings":
@@ -4088,7 +4306,7 @@
 							"syntax": "Packages/C++/C++.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1178.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -4102,20 +4320,55 @@
 			[
 				{
 					"buffer": 1,
-					"file": "algorithms/algebra/binary_exponentiation/output.txt",
+					"file": "algorithms/algebra/binary_exponentiation/input.txt",
 					"selected": true,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 30,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								21,
-								21
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"file": "algorithms/algebra/binary_exponentiation/output.txt",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15,
+								15
 							]
 						],
 						"settings":
@@ -4149,13 +4402,19 @@
 				0,
 				0,
 				1,
-				1
+				2
 			],
 			[
 				1,
 				0,
 				2,
 				1
+			],
+			[
+				1,
+				1,
+				2,
+				2
 			]
 		],
 		"cols":
@@ -4167,10 +4426,23 @@
 		"rows":
 		[
 			0.0,
+			0.5,
 			1.0
 		]
 	},
 	"menu_visible": true,
+	"output.Terminus":
+	{
+		"height": 237.0
+	},
+	"output.Terminus 2":
+	{
+		"height": 238.0
+	},
+	"output.Terminus 3":
+	{
+		"height": 256.0
+	},
 	"output.exec":
 	{
 		"height": 213.0
@@ -4222,13 +4494,19 @@
 				0,
 				0,
 				1,
-				1
+				2
 			],
 			[
 				1,
 				0,
 				2,
 				1
+			],
+			[
+				1,
+				1,
+				2,
+				2
 			]
 		]
 	},
