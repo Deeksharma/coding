@@ -51,34 +51,27 @@ int power(int a, int b) {
 	else return power((a * a) % mod, b / 2) % mod;
 }
 
-int fact[N];
-void populate(){
-	fact[0] = 1;
-	for(int i=1;i<N;i++){
-		fact[i] = ((fact[i-1]%mod)*(i%mod))%mod;
-	}
-}
-
 void solve() {
-	int n, m;
-	cin>>n>>m;
-	vector<int> v(n);
-	for(int i=0;i<n;i++) cin>>v[i];
-	sort(all(v));
-	int ans =0;
-	for(int i=0;i<n;i++){
-		// lower bound for v[i]+m find krenge 
-		int l = i+1;
-		int r = lower_bound(all(v), v[i]+m) - v.begin();
-		varbug(l);
-		varbug(r);
-		int numOfStudents = r - l;
-		// find numOfStudents C m-1
-		if(numOfStudents>m-1){
+	int x, k;
+	cin>>x>>k;
 
+	if(x%k){
+		cout<<1<<endl;
+		cout<<x<<endl;
+		return;
+	}else{
+		cout<<2<<endl;
+		for(int i=1;i<=x;i++){
+			for(int j=1;j<=x;j++){
+				if(i+j==x){
+					if(i%k!=0&&j%k!=0){
+						cout<<i<<" "<<j<<endl;
+						return;
+					}
+				}
+			}
 		}
 	}
-
 }
 
 int32_t main() {

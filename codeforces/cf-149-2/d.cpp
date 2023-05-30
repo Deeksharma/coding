@@ -51,34 +51,76 @@ int power(int a, int b) {
 	else return power((a * a) % mod, b / 2) % mod;
 }
 
-int fact[N];
-void populate(){
-	fact[0] = 1;
-	for(int i=1;i<N;i++){
-		fact[i] = ((fact[i-1]%mod)*(i%mod))%mod;
-	}
-}
-
 void solve() {
-	int n, m;
-	cin>>n>>m;
-	vector<int> v(n);
-	for(int i=0;i<n;i++) cin>>v[i];
-	sort(all(v));
-	int ans =0;
+	int n;
+	cin>>n;
+	string s;
+	cin>>s;
+	stack<int> st;
+	vector<int> color(n);
 	for(int i=0;i<n;i++){
-		// lower bound for v[i]+m find krenge 
-		int l = i+1;
-		int r = lower_bound(all(v), v[i]+m) - v.begin();
-		varbug(l);
-		varbug(r);
-		int numOfStudents = r - l;
-		// find numOfStudents C m-1
-		if(numOfStudents>m-1){
-
+		if(s[i]=='('){
+			st.push(i);
+		}else{
+			if(!st.empty()&&s[st.top()]=='('){
+				color[i] = 1;
+				color[st.top()] = 1;
+				st.pop();
+			}else{
+				st.push(i);
+			}
 		}
 	}
 
+	vector<int> idx;
+	string sdash = "";
+	while(!st.empty()){
+		sdash += s[st.top()];
+		idx.pb(st.top());
+		st.pop();
+	}
+	stack<int> stdash;
+
+	for(int i=0;i<sdash.sz;i++){
+		if(sdash[i]=='('){
+			stdash.push(i);
+		}else{
+			if(!stdash.empty()&&sdash[stdash.top()]=='('){
+				stdash.pop();
+			}else{
+				cout<<"-1"<<endl;
+				return;
+			}
+		}
+	}
+
+	if(!stdash.empty()){
+		cout<<"-1"<<endl;
+		return;
+	}
+
+	for(int i=0;i<idx.sz;i++){
+		color[idx[i]] = 2;
+	}
+
+	map<int,int> m;
+	for(int i=0;i<n;i++){
+		m[color[i]] =1;
+	}
+	if(m.size() == 1){
+		cout<<1<<endl;
+		for(int i=0;i<color.sz;i++){
+			cout<<1<<" ";
+		}
+	}
+	else{
+		cout<<2<<endl;
+		for(int i=0;i<color.sz;i++){
+			cout<<color[i]<<" ";
+		}	
+	}
+
+	cout<<endl;
 }
 
 int32_t main() {

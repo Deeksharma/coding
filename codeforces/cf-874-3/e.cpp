@@ -103,30 +103,12 @@ void solve() {
 			dfs(i);
 		}
 	}
-	// loopbug(vis, 0, n);
 
-	
-	// map<int,vector<int> > m;
 	vector<vector<int> > component(k);
 
 	for(int i=0;i<n;i++){
 		component[vis[i]-1].pb(i);
 	}
-
-	// for(int i=0;i<k;i++){
-	// 	for(int j=0;j<component[i].sz;j++){
-	// 		cout<<component[i][j]<<" ";
-	// 	}
-	// 	cout<<endl;
-	// }
-	// cout<<"adj list--"<<endl;
-
-	// for(int i=0;i<n;i++){
-	// 	for(auto x: g[i]){
-	// 		cout<<x<<" ";
-	// 	}
-	// 	cout<<endl;
-	// }
 
 
 	int numberOfCycle=0;
@@ -144,11 +126,7 @@ void solve() {
 			}
 		}
 		if(is_cycle) numberOfCycle++;
-		// cout<<endl;
-		// if(is_cycle(component[i][0])) numberOfCycle++;
 	}
-
-	// varbug(numberOfCycle);
 		
 	int mini = ((k-numberOfCycle>0)?1:0) + numberOfCycle;
 	int maxi = k;
