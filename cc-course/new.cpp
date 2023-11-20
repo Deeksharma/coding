@@ -54,11 +54,12 @@ int power(int a, int b) {
 void solve() {
 	int j;
 	int sum = 0;
-	for(int i=0;i<10;i++){
-		for(j=i+1;j<10;j++){
+	for(int i=0;i<10;i+=j) {
+		for(j=i+1;j<8;j++){
 			cout<<i<<" "<<j<<endl;
 			sum+=1;
 		}
+		varbug(j)
 	}
 	varbug(sum)
 }

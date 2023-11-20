@@ -68,7 +68,7 @@ void solve() {
 
 int minSwaps(vector<int>&nums)
 {
-	// in order to get the minimum number of swaps we need to fing the actual positions of elements first
+	// in order to get the minimum number of swaps we need to find the actual positions of elements first
 	// then find the elements that form swapping loop, add in answer size of loop -1
 	// 2 8 5 4 - 4 and 8 should be swapped, size of loop =2 ans=2-1=1
 	// 10,19,6,3,5 - 3,5,6,10,19 loop1 3&10, loop2 5&19 ans = 2
